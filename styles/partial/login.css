@@ -8,6 +8,19 @@
     width: 100%;
 }
 
+/* Field error styling */
+.field-error {
+    color: #dc3545;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.field-error.show {
+    display: block;
+}
+
 .login-options {
     display: flex;
     justify-content: space-between;

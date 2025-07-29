@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     // Check if user is already logged in
-    Utils.redirectIfAuthenticated('dashboard.html');
+    Utils.redirectIfAuthenticated('index.html');
     
     // Get form elements
     const registerForm = document.getElementById('registerForm');
@@ -158,7 +158,7 @@ async function handleRegister(event) {
             
             // Redirect to dashboard after a delay
             setTimeout(() => {
-                window.location.href = 'dashboard.html';
+                window.location.href = 'index.html';
             }, 2000);
             
         } else {

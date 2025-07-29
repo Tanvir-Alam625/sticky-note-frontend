@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     // Check if user is already logged in
-    Utils.redirectIfAuthenticated('dashboard.html');
+    Utils.redirectIfAuthenticated('index.html');
     
     // Get form elements
     const loginForm = document.getElementById('loginForm');
@@ -89,7 +89,7 @@ async function handleLogin(event) {
             
             // Redirect to dashboard
             setTimeout(() => {
-                window.location.href = 'dashboard.html';
+                window.location.href = 'index.html';
             }, 1500);
             
         } else {
