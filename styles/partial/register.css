@@ -1,0 +1,173 @@
+/* Register page specific styles */
+
+.register-container {
+    max-width: 450px;
+}
+
+.register-form {
+    width: 100%;
+}
+
+/* Password requirements styling */
+.password-requirements {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 5px;
+    line-height: 1.4;
+}
+
+.password-requirements p {
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.password-requirements ul {
+    margin-left: 15px;
+    list-style: none;
+}
+
+.password-requirements li {
+    margin-bottom: 2px;
+    position: relative;
+    padding-left: 20px;
+    transition: color 0.3s ease;
+}
+
+.password-requirements li::before {
+    content: '✗';
+    position: absolute;
+    left: 0;
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.password-requirements li.requirement-met {
+    color: #28a745;
+}
+
+.password-requirements li.requirement-met::before {
+    content: '✓';
+    color: #28a745;
+}
+
+/* Terms and conditions */
+.terms-container {
+    margin: 20px 0;
+}
+
+.terms-container label {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+.terms-container input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.terms-container a {
+    color: #667eea;
+    text-decoration: none;
+}
+
+.terms-container a:hover {
+    text-decoration: underline;
+}
+
+/* Register button specific styling */
+.register-btn {
+    margin-top: 10px;
+}
+
+/* Additional register page animations */
+.register-container {
+    animation: slideInUp 0.6s ease-out;
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Register form validation states */
+.register-form .form-group input.valid {
+    border-color: #28a745;
+    background-color: #f8fff8;
+}
+
+.register-form .form-group input.invalid {
+    border-color: #dc3545;
+    background-color: #fff5f5;
+}
+
+/* Password match validation */
+.password-match-indicator {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    display: none;
+}
+
+.form-group.has-indicator {
+    position: relative;
+}
+
+.form-group.has-indicator input {
+    padding-right: 50px;
+}
+
+.password-match-indicator.match {
+    color: #28a745;
+    display: block;
+}
+
+.password-match-indicator.no-match {
+    color: #dc3545;
+    display: block;
+}
+
+/* Progress bar for password strength */
+.password-strength {
+    margin-top: 5px;
+    height: 4px;
+    background: #e1e1e1;
+    border-radius: 2px;
+    overflow: hidden;
+    display: none;
+}
+
+.password-strength-bar {
+    height: 100%;
+    width: 0%;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.password-strength.weak .password-strength-bar {
+    width: 33%;
+    background: #dc3545;
+}
+
+.password-strength.medium .password-strength-bar {
+    width: 66%;
+    background: #ffc107;
+}
+
+.password-strength.strong .password-strength-bar {
+    width: 100%;
+    background: #28a745;
+}

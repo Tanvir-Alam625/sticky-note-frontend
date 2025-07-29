@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Sticky Notes</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/partial/register.css">
+</head>
+<body>
+    <div class="register-container">
+        <div class="logo">
+            <h1>📝 Sticky Notes</h1>
+            <p>Create your account to get started</p>
+        </div>
+
+        <div class="error-message" id="errorMessage"></div>
+        <div class="success-message" id="successMessage"></div>
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Creating your account...</p>
+        </div>
+
+        <form id="registerForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input 
+                    type="text" 
+                    id="username" 
+                    name="username" 
+                    required 
+                    minlength="3"
+                    maxlength="50"
+                    pattern="[a-zA-Z0-9_]+"
+                    placeholder="Enter your username"
+                >
+                <div class="field-error" id="username-error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    required 
+                    placeholder="Enter your email"
+                >
+                <div class="field-error" id="email-error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    required 
+                    minlength="6"
+                    placeholder="Enter your password"
+                >
+                <div class="password-requirements">
+                    <p>Password must contain:</p>
+                    <ul>
+                        <li id="length-req">At least 6 characters</li>
+                        <li id="lower-req">One lowercase letter</li>
+                        <li id="upper-req">One uppercase letter</li>
+                        <li id="number-req">One number</li>
+                    </ul>
+                </div>
+                <div class="password-strength">
+                    <div class="password-strength-bar"></div>
+                </div>
+                <div class="field-error" id="password-error"></div>
+            </div>
+
+            <div class="form-group has-indicator">
+                <label for="confirmPassword">Confirm Password</label>
+                <input 
+                    type="password" 
+                    id="confirmPassword" 
+                    name="confirmPassword" 
+                    required 
+                    placeholder="Confirm your password"
+                >
+                <span class="password-match-indicator"></span>
+                <div class="field-error" id="confirmPassword-error"></div>
+            </div>
+
+            <div class="terms-container">
+                <label>
+                    <input type="checkbox" id="acceptTerms" required>
+                    I agree to the <a href="#" onclick="showTerms()">Terms of Service</a> and 
+                    <a href="#" onclick="showPrivacy()">Privacy Policy</a>
+                </label>
+            </div>
+
+            <button type="submit" class="register-btn" id="registerBtn">
+                Create Account
+            </button>
+        </form>
+
+        <div class="register-link">
+            Already have an account? <a href="login.html">Sign in here</a>
+        </div>
+    </div>
+
+    <script src="js/index.js"></script>
+    <script src="js/partial/register.js"></script>
+    
+    <script>
+        // Placeholder functions for terms and privacy
+        function showTerms() {
+            alert('Terms of Service would be displayed here.');
+        }
+        
+        function showPrivacy() {
+            alert('Privacy Policy would be displayed here.');
+        }
+    </script>
+</body>
+</html>
+            padding: 20px;
+        }
+
+        .register-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .register-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #667eea);
+            background-size: 200% 100%;
+            animation: gradientShift 3s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo h1 {
+            color: #333;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .logo p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e1e1e1;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .form-group input:valid {
+            border-color: #28a745;
+        }
+
+        .register-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .register-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .register-btn:active {
+            transform: translateY(0);
+        }
+
+        .register-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .login-link {
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .login-link a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            background: #fee;
+            color: #c33;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #c33;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .success-message {
+            background: #efe;
+            color: #363;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #363;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .password-requirements {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 5px;
+            line-height: 1.4;
+        }
+
+        .password-requirements ul {
+            margin-left: 15px;
+        }
+
+        .password-requirements li {
+            margin-bottom: 2px;
+        }
+
+        .requirement-met {
+            color: #28a745;
+        }
+
+        @media (max-width: 480px) {
+            .register-container {
+                padding: 30px 25px;
+                margin: 10px;
+            }
+
+            .logo h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <div class="logo">
+            <h1>📝 Sticky Notes</h1>
+            <p>Create your account to get started</p>
+        </div>
+
+        <div class="error-message" id="errorMessage"></div>
+        <div class="success-message" id="successMessage"></div>
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Creating your account...</p>
+        </div>
+
+        <form id="registerForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input 
+                    type="text" 
+                    id="username" 
+                    name="username" 
+                    required 
+                    minlength="3"
+                    maxlength="50"
+                    pattern="[a-zA-Z0-9_]+"
+                    placeholder="Enter your username"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    required 
+                    placeholder="Enter your email"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    required 
+                    minlength="6"
+                    placeholder="Enter your password"
+                >
+                <div class="password-requirements">
+                    <p>Password must contain:</p>
+                    <ul>
+                        <li id="length-req">At least 6 characters</li>
+                        <li id="lower-req">One lowercase letter</li>
+                        <li id="upper-req">One uppercase letter</li>
+                        <li id="number-req">One number</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input 
+                    type="password" 
+                    id="confirmPassword" 
+                    name="confirmPassword" 
+                    required 
+                    placeholder="Confirm your password"
+                >
+            </div>
+
+            <button type="submit" class="register-btn" id="registerBtn">
+                Create Account
+            </button>
+        </form>
+
+        <div class="login-link">
+            Already have an account? <a href="login.html">Sign in here</a>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE_URL = 'http://localhost:3000/api';
+        
+        const registerForm = document.getElementById('registerForm');
+        const registerBtn = document.getElementById('registerBtn');
+        const loadingDiv = document.getElementById('loading');
+        const errorMessage = document.getElementById('errorMessage');
+        const successMessage = document.getElementById('successMessage');
+        const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('confirmPassword');
+
+        // Password requirements validation
+        passwordInput.addEventListener('input', function() {
+            const password = this.value;
+            
+            // Length requirement
+            const lengthReq = document.getElementById('length-req');
+            if (password.length >= 6) {
+                lengthReq.classList.add('requirement-met');
+            } else {
+                lengthReq.classList.remove('requirement-met');
+            }
+
+            // Lowercase requirement
+            const lowerReq = document.getElementById('lower-req');
+            if (/[a-z]/.test(password)) {
+                lowerReq.classList.add('requirement-met');
+            } else {
+                lowerReq.classList.remove('requirement-met');
+            }
+
+            // Uppercase requirement
+            const upperReq = document.getElementById('upper-req');
+            if (/[A-Z]/.test(password)) {
+                upperReq.classList.add('requirement-met');
+            } else {
+                upperReq.classList.remove('requirement-met');
+            }
+
+            // Number requirement
+            const numberReq = document.getElementById('number-req');
+            if (/\d/.test(password)) {
+                numberReq.classList.add('requirement-met');
+            } else {
+                numberReq.classList.remove('requirement-met');
+            }
+        });
+
+        // Confirm password validation
+        confirmPasswordInput.addEventListener('input', function() {
+            const password = passwordInput.value;
+            const confirmPassword = this.value;
+            
+            if (password !== confirmPassword && confirmPassword.length > 0) {
+                this.setCustomValidity('Passwords do not match');
+            } else {
+                this.setCustomValidity('');
+            }
+        });
+
+        // Show message function
+        function showMessage(message, type = 'error') {
+            hideMessages();
+            
+            if (type === 'error') {
+                errorMessage.textContent = message;
+                errorMessage.style.display = 'block';
+            } else {
+                successMessage.textContent = message;
+                successMessage.style.display = 'block';
+            }
+        }
+
+        // Hide messages function
+        function hideMessages() {
+            errorMessage.style.display = 'none';
+            successMessage.style.display = 'none';
+        }
+
+        // Show loading function
+        function showLoading(show = true) {
+            if (show) {
+                loadingDiv.style.display = 'block';
+                registerBtn.disabled = true;
+                registerBtn.textContent = 'Creating Account...';
+            } else {
+                loadingDiv.style.display = 'none';
+                registerBtn.disabled = false;
+                registerBtn.textContent = 'Create Account';
+            }
+        }
+
+        // Form submission
+        registerForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            hideMessages();
+
+            const formData = new FormData(this);
+            const userData = {
+                username: formData.get('username'),
+                email: formData.get('email'),
+                password: formData.get('password')
+            };
+
+            // Validate password match
+            const confirmPassword = formData.get('confirmPassword');
+            if (userData.password !== confirmPassword) {
+                showMessage('Passwords do not match');
+                return;
+            }
+
+            showLoading(true);
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/auth/register`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(userData)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    showMessage('Account created successfully! You can now sign in.', 'success');
+                    
+                    // Store token for future use
+                    localStorage.setItem('token', result.data.token);
+                    localStorage.setItem('user', JSON.stringify({
+                        id: result.data.userId,
+                        username: result.data.username,
+                        email: result.data.email
+                    }));
+
+                    // Redirect to login page after 2 seconds
+                    setTimeout(() => {
+                        window.location.href = 'login.html';
+                    }, 2000);
+
+                } else {
+                    if (result.errors && Array.isArray(result.errors)) {
+                        const errorMessages = result.errors.map(err => err.msg).join(', ');
+                        showMessage(errorMessages);
+                    } else {
+                        showMessage(result.message || 'Registration failed');
+                    }
+                }
+
+            } catch (error) {
+                console.error('Registration error:', error);
+                showMessage('Network error. Please check if the server is running and try again.');
+            } finally {
+                showLoading(false);
+            }
+        });
+
+        // Form validation on input
+        const inputs = registerForm.querySelectorAll('input');
+        inputs.forEach(input => {
+            input.addEventListener('input', function() {
+                if (this.checkValidity()) {
+                    this.style.borderColor = '#28a745';
+                } else {
+                    this.style.borderColor = '#e1e1e1';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

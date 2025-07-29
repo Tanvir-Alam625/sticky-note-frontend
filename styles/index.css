@@ -1,0 +1,169 @@
+/* Import common components */
+@import url(./common/button.css);
+@import url(./common/checkbox.css);
+@import url(./common/input.css);
+
+/* Global styles for Sticky Notes application */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Common container styles */
+.auth-container,
+.login-container,
+.register-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-container {
+    max-width: 400px;
+}
+
+.register-container {
+    max-width: 450px;
+}
+
+/* Animated gradient border */
+.auth-container::before,
+.login-container::before,
+.register-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #667eea, #764ba2, #667eea);
+    background-size: 200% 100%;
+    animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Logo styles */
+.logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo h1 {
+    color: #333;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.logo p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Link styles */
+.auth-link,
+.login-link,
+.register-link {
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.auth-link a,
+.login-link a,
+.register-link a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-link a:hover,
+.login-link a:hover,
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Message styles */
+.error-message {
+    background: #fee;
+    color: #c33;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #c33;
+    font-size: 0.9rem;
+    display: none;
+}
+
+.success-message {
+    background: #efe;
+    color: #363;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #363;
+    font-size: 0.9rem;
+    display: none;
+}
+
+/* Loading spinner */
+.loading {
+    display: none;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.loading p {
+    margin-top: 10px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #667eea;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .auth-container,
+    .login-container,
+    .register-container {
+        padding: 30px 25px;
+        margin: 10px;
+    }
+
+    .logo h1 {
+        font-size: 2rem;
+    }
+}
