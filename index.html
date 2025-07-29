@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,34 +15,34 @@
             padding: 40px;
             text-align: center;
         }
-        
+
         .welcome-message {
             margin-bottom: 30px;
         }
-        
+
         .welcome-message h1 {
             color: #333;
             margin-bottom: 10px;
         }
-        
+
         .welcome-message p {
             color: #666;
             font-size: 1.1rem;
         }
-        
+
         .user-info {
             background: #f8f9fa;
             padding: 20px;
             border-radius: 12px;
             margin-bottom: 30px;
         }
-        
+
         .coming-soon {
             color: #667eea;
             font-size: 1.2rem;
             margin: 20px 0;
         }
-        
+
         .logout-btn {
             background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
             max-width: 200px;
@@ -49,26 +50,27 @@
         }
     </style>
 </head>
+
 <body>
     <div class="dashboard-container">
         <div class="welcome-message">
             <h1>🎉 Welcome to Sticky Notes!</h1>
             <p>You have successfully logged in to your account.</p>
         </div>
-        
+
         <div class="user-info" id="userInfo">
             <h3>Your Account Information</h3>
             <p><strong>Username:</strong> <span id="username">Loading...</span></p>
             <p><strong>Email:</strong> <span id="email">Loading...</span></p>
             <p><strong>Member since:</strong> <span id="memberSince">Loading...</span></p>
         </div>
-        
+
         <div class="coming-soon">
             <h3>📝 Notes Management Coming Soon!</h3>
             <p>This is Phase 1 - Authentication completed!</p>
             <p>Phase 2 will include full notes CRUD functionality.</p>
         </div>
-        
+
         <button class="btn logout-btn" onclick="handleLogout()">
             Logout
         </button>
@@ -76,13 +78,13 @@
 
     <script src="js/index.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Check if user is logged in
             if (!Utils.isAuthenticated()) {
                 window.location.href = 'login.html';
                 return;
             }
-            
+
             // Load user information
             const user = Utils.storage.get('user');
             if (user) {
@@ -91,12 +93,11 @@
                 document.getElementById('memberSince').textContent = new Date().toLocaleDateString();
             }
         });
-        
+
         function handleLogout() {
-            if (confirm('Are you sure you want to logout?')) {
-                Utils.logout();
-            }
+            Utils.logout();
         }
     </script>
 </body>
+
 </html>
