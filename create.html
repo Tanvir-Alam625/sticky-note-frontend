@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create - Sticky Notes</title>
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+
+<body>
+    <!-- start header html  -->
+    <header class="header">
+        <p> <span id="username">Loading...</span></p>
+        <h5>Create Sticky Note</h5>
+        <div>
+            <button class="btn logout-btn" onclick="handleLogout()">
+                Logout
+            </button>
+        </div>
+    </header>
+    <!-- end header html -->
+
+    <!-- start main content html -->
+    <main class="main-content">
+
+    </main>
+    <!-- End main content html -->
+
+    <script src="js/index.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Check if user is logged in
+            if (!Utils.isAuthenticated()) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Load user information
+            const user = Utils.storage.get('user');
+            if (user) {
+                document.getElementById('username').textContent = user.username;
+            }
+        });
+
+        function handleLogout() {
+            Utils.logout();
+        }
+    </script>
+</body>
+
+</html>
