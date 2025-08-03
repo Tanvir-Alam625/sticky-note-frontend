@@ -11,6 +11,9 @@
     border-radius: 10px;
     margin: 20px auto;
     width: 1200px;
+    position: sticky;
+    top: 20px;
+    z-index: 20;
 }
 
 #username{
@@ -29,6 +32,6 @@
     background: #f8f9fa;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    min-height: calc(100vh - 200px);
+    height: fit-content;
     overflow-y: auto;
 }
