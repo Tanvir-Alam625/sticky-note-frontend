@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get form elements
     const loginForm = document.getElementById('loginForm');
     const emailInput = document.getElementById('email');
-    const passwordInput = document.getElementById('password');
     const rememberMeCheckbox = document.getElementById('rememberMe');
     
     // Load remembered email if exists
@@ -114,31 +113,3 @@ async function handleLogin(event) {
         Utils.showLoading('loading', false);
     }
 }
-
-// Additional login page functionality
-const LoginPage = {
-    // Toggle password visibility
-    togglePasswordVisibility: () => {
-        const passwordInput = document.getElementById('password');
-        const toggleButton = document.querySelector('.password-toggle');
-        
-        if (passwordInput && toggleButton) {
-            const isPassword = passwordInput.type === 'password';
-            passwordInput.type = isPassword ? 'text' : 'password';
-            toggleButton.textContent = isPassword ? '👁️' : '🙈';
-        }
-    },
-    
-    // Handle forgot password (placeholder for future implementation)
-    handleForgotPassword: () => {
-        Utils.showMessage('Forgot password functionality will be available soon.', 'success');
-    },
-    
-    // Handle social login (placeholder for future implementation)
-    handleSocialLogin: (provider) => {
-        Utils.showMessage(`${provider} login will be available soon.`, 'success');
-    }
-};
-
-// Export for global access
-window.LoginPage = LoginPage;

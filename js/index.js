@@ -15,7 +15,7 @@ const Utils = {
     // Show/hide loading state
     showLoading: (elementId, show = true, loadingText = 'Loading...') => {
         const element = document.getElementById(elementId);
-        const btn = document.querySelector('.btn, .login-btn, .register-btn');
+        const btn = document.querySelector('.btn, .login-btn, .register-btn, #createBtn');
         
         if (show) {
             if (element) element.style.display = 'block';
@@ -74,8 +74,8 @@ const Utils = {
 
     // Validate email format
     isValidEmail: (email) => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email regex
+        return emailRegex.test(email); // Returns true if valid, false otherwise
     },
 
     // Validate password strength
