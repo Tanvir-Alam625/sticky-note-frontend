@@ -37,7 +37,7 @@
                     <div class="field-error" id="title-error"></div>
                 </div>
                 <div class="form-group">
-                    <label for="content">Color Status</label>
+                    <label for="color">Color Status</label>
                     <select id="color" name="color" required>
                         <option value="" disabled selected>Select color</option>
                         <option value="red">Red</option>
@@ -45,7 +45,7 @@
                         <option value="blue">Blue</option>
                         <option value="yellow">Yellow</option>
                     </select>
-                    <div class="field-error" id="content-error"></div>
+                    <div class="field-error" id="color-error"></div>
                 </div>
             </div>
             <div class="form-group">
@@ -55,7 +55,7 @@
             </div>
 
             <button type="submit" class="btn" id="createBtn">
-                Create
+                Create Note
             </button>
             
         </form>
@@ -64,25 +64,6 @@
 
     <script src="js/index.js"></script>
     <script src="js/partial/create.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Check if user is logged in
-            if (!Utils.isAuthenticated()) {
-                window.location.href = 'login.html';
-                return;
-            }
-
-            // Load user information
-            const user = Utils.storage.get('user');
-            if (user) {
-                document.getElementById('username').textContent = user.username;
-            }
-        });
-
-        function handleLogout() {
-            Utils.logout();
-        }
-    </script>
 </body>
 
 </html>
