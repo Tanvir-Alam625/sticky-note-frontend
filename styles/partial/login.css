@@ -62,22 +62,6 @@
     margin-top: 10px;
 }
 
-/* Additional login page animations */
-.login-container {
-    animation: slideInUp 0.6s ease-out;
-}
-
-@keyframes slideInUp {
-    from {
-        transform: translateY(30px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
 /* Login form validation states */
 .login-form .form-group input.valid {
     border-color: #28a745;

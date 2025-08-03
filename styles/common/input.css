@@ -3,6 +3,7 @@
 .form-group {
     margin-bottom: 25px;
     position: relative;
+    width: 100%;
 }
 
 .form-group label {

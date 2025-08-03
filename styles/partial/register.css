@@ -98,22 +98,6 @@
     margin-top: 10px;
 }
 
-/* Additional register page animations */
-.register-container {
-    animation: slideInUp 0.6s ease-out;
-}
-
-@keyframes slideInUp {
-    from {
-        transform: translateY(30px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
 /* Register form validation states */
 .register-form .form-group input.valid {
     border-color: #28a745;

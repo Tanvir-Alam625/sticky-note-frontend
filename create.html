@@ -10,7 +10,7 @@
 
 <body>
     <!-- start header html  -->
-    <header class="header">
+    <header class="header fade-in">
         <p> <span id="username">Loading...</span></p>
         <h5>Create Sticky Note</h5>
         <div>
@@ -22,8 +22,7 @@
     <!-- end header html -->
 
     <!-- start main content html -->
-    <main
-     class="main-content">
+    <main class="main-content slide-in-up">
         <div class="error-message" id="errorMessage"></div>
         <div class="success-message" id="successMessage"></div>
         <div class="loading" id="loading">
@@ -31,10 +30,67 @@
             <p>Creating...</p>
         </div>
         <form id="createNote">
-            <div class="form-group">
+        <div style="display: flex; align-items: center; gap: 20px;">
+                <div class="form-group">
                 <label for="title">Title</label>
                 <input type="text" id="title" name="title" required placeholder="Enter note title">
                 <div class="field-error" id="title-error"></div>
+            </div>
+            <div class="form-group">
+                <label for="content">Color Status</label>
+                <select id="color" name="color" required>
+                    <option value="" disabled selected>Select color</option>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                    <option value="yellow">Yellow</option>
+                    <div class="field-error" id="content-error"></div>
+            </div>
+            </div>
+            <div class="form-group">
+                <label for="content">Details</label>
+                <textarea id="content" rows="12" name="content" required placeholder="Enter note details"></textarea>
+                <div class="field-error" id="content-error"></div>
+            </div>
+            <div class="form-group">
+                <label for="content">Details</label>
+                <textarea id="content" rows="12" name="content" required placeholder="Enter note details"></textarea>
+                <div class="field-error" id="content-error"></div>
+            </div>
+            <div class="form-group">
+                <label for="content">Details</label>
+                <textarea id="content" rows="12" name="content" required placeholder="Enter note details"></textarea>
+                <div class="field-error" id="content-error"></div>
+            </div>
+            <div class="form-group">
+                <label for="content">Details</label>
+                <textarea id="content" rows="12" name="content" required placeholder="Enter note details"></textarea>
+                <div class="field-error" id="content-error"></div>
+            </div>
+            <div class="form-group">
+                <label for="content">Details</label>
+                <textarea id="content" rows="12" name="content" required placeholder="Enter note details"></textarea>
+                <div class="field-error" id="content-error"></div>
+            </div>
+            <div class="form-group">
+                <label for="content">Details</label>
+                <textarea id="content" rows="12" name="content" required placeholder="Enter note details"></textarea>
+                <div class="field-error" id="content-error"></div>
+            </div>
+            <div class="form-group">
+                <label for="content">Details</label>
+                <textarea id="content" rows="12" name="content" required placeholder="Enter note details"></textarea>
+                <div class="field-error" id="content-error"></div>
+            </div>
+            <div class="form-group">
+                <label for="content">Details</label>
+                <textarea id="content" rows="12" name="content" required placeholder="Enter note details"></textarea>
+                <div class="field-error" id="content-error"></div>
+            </div>
+            <div class="form-group">
+                <label for="content">Details</label>
+                <textarea id="content" rows="12" name="content" required placeholder="Enter note details"></textarea>
+                <div class="field-error" id="content-error"></div>
             </div>
             <div class="form-group">
                 <label for="content">Details</label>
