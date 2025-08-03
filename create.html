@@ -22,8 +22,29 @@
     <!-- end header html -->
 
     <!-- start main content html -->
-    <main class="main-content">
-
+    <main
+     class="main-content">
+        <div class="error-message" id="errorMessage"></div>
+        <div class="success-message" id="successMessage"></div>
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Creating...</p>
+        </div>
+        <form id="createNote">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" required placeholder="Enter note title">
+                <div class="field-error" id="title-error"></div>
+            </div>
+            <div class="form-group">
+                <label for="content">Details</label>
+                <textarea id="content" rows="12" name="content" required placeholder="Enter note details"></textarea>
+                <div class="field-error" id="content-error"></div>
+            </div>
+            <button type="submit" class="btn" id="createBtn">
+                Create
+            </button>
+        </form>
     </main>
     <!-- End main content html -->
 

@@ -1,4 +1,3 @@
-// Common JavaScript functionality for Sticky Notes application
 
 // API Configuration
 const API_CONFIG = {
