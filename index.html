@@ -6,75 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Sticky Notes</title>
     <link rel="stylesheet" href="styles/index.css">
-    <style>
-        .dashboard-container {
-            max-width: 1200px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            padding: 40px;
-            text-align: center;
-        }
-
-        .welcome-message {
-            margin-bottom: 30px;
-        }
-
-        .welcome-message h1 {
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .welcome-message p {
-            color: #666;
-            font-size: 1.1rem;
-        }
-
-        .user-info {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-        }
-
-        .coming-soon {
-            color: #667eea;
-            font-size: 1.2rem;
-            margin: 20px 0;
-        }
-
-        .logout-btn {
-            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
-            max-width: 200px;
-            margin: 0 auto;
-        }
-    </style>
 </head>
 
 <body>
-    <div class="dashboard-container">
-        <div class="welcome-message">
-            <h1>🎉 Welcome to Sticky Notes!</h1>
-            <p>You have successfully logged in to your account.</p>
+    <header class="header">
+        <div>
+            <p> <span id="username">Loading...</span></p>
         </div>
-
-        <div class="user-info" id="userInfo">
-            <h3>Your Account Information</h3>
-            <p><strong>Username:</strong> <span id="username">Loading...</span></p>
-            <p><strong>Email:</strong> <span id="email">Loading...</span></p>
-            <p><strong>Member since:</strong> <span id="memberSince">Loading...</span></p>
-        </div>
-
-        <div class="coming-soon">
-            <h3>📝 Notes Management Coming Soon!</h3>
-            <p>This is Phase 1 - Authentication completed!</p>
-            <p>Phase 2 will include full notes CRUD functionality.</p>
-        </div>
-
-        <button class="btn logout-btn" onclick="handleLogout()">
+        <div>
+            <button class="btn logout-btn" onclick="handleLogout()">
             Logout
         </button>
-    </div>
+        </div>
+    </header>
 
     <script src="js/index.js"></script>
     <script>
@@ -89,8 +33,6 @@
             const user = Utils.storage.get('user');
             if (user) {
                 document.getElementById('username').textContent = user.username;
-                document.getElementById('email').textContent = user.email;
-                document.getElementById('memberSince').textContent = new Date().toLocaleDateString();
             }
         });
 
