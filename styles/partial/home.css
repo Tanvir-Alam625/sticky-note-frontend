@@ -172,8 +172,8 @@ a {
 
 .home-container .content .content-head .note-actions .color-status {
     height: 45px;
-    width: 200px;
-    border-radius: 20px;
+    width: 150px;
+    border-radius: 10px;
 }
 
 .home-container .content .content-head .note-actions a {
