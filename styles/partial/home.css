@@ -167,12 +167,13 @@ a {
 .home-container .content .content-head .note-actions {
     display: flex;
     gap: 10px;
+    align-items: center;
 }
 
 .home-container .content .content-head .note-actions .color-status {
-    height: 20px;
-    width: 40px;
-    border-radius: 5px;
+    height: 45px;
+    width: 200px;
+    border-radius: 20px;
 }
 
 .home-container .content .content-head .note-actions a {
