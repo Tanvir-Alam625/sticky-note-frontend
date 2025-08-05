@@ -16,7 +16,7 @@
             <h5>Update Sticky Note</h5>
         </a>
         <div>
-            <button class="btn logout-btn" onclick="handleLogout()">
+            <button class="btn logout-btn" id="logoutBtn">
                 Logout
             </button>
         </div>
@@ -31,7 +31,7 @@
             <div class="spinner"></div>
             <p>Loading...</p>
         </div>
-        
+
         <form id="editNoteForm">
             <div style="display: flex; gap: 20px;">
                 <div class="form-group">
@@ -71,6 +71,7 @@
     <!-- End main content html -->
 
     <script src="js/index.js"></script>
+    <script src="js/common/auth.js"></script>
     <script src="js/partial/edit.js"></script>
 </body>
 

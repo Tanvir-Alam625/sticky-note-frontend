@@ -1,18 +1,7 @@
 // Edit note page JavaScript functionality
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Check if user is logged in
-  if (!Utils.isAuthenticated()) {
-    Utils.redirectIfNotAuthenticated();
-    return;
-  } else {
-    const logoutBtn = document.getElementById("logoutBtn");
-    if (logoutBtn) {
-      logoutBtn.addEventListener("click", () => {
-        Utils.logout();
-      });
-    }
-  }
+
 
   // Get note ID from URL
   const noteId = new URLSearchParams(window.location.search).get("id");
