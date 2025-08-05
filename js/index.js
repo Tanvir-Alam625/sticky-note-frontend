@@ -1,4 +1,7 @@
 
+
+
+
 // API Configuration
 const API_CONFIG = {
     BASE_URL: 'http://localhost:9000/api',
@@ -193,6 +196,7 @@ const Utils = {
 
     // Redirect if not authenticated
     redirectIfNotAuthenticated: (redirectTo = 'login.html') => {
+        
         if (!Utils.isAuthenticated()) {
             window.location.href = redirectTo;
         }

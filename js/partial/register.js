@@ -6,8 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Get form elements
     const registerForm = document.getElementById('registerForm');
-    const usernameInput = document.getElementById('username');
-    const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
     const confirmPasswordInput = document.getElementById('confirmPassword');
     

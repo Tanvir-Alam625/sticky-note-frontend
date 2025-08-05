@@ -85,6 +85,8 @@ async function handleLogin(event) {
             
             // Show success message
             Utils.showMessage('Login successful! Redirecting...', 'success');
+
+            event.target.reset();
             
             // Redirect to dashboard
             setTimeout(() => {
