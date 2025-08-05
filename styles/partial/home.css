@@ -15,6 +15,11 @@
     z-index: 20;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 #username {
     font-weight: bold;
     color: #333;
@@ -34,4 +39,126 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     height: fit-content;
     overflow-y: auto;
+}
+
+.home-container {
+    display: flex;
+    min-height: 500px;
+}
+
+.home-container .sidebar {
+    width: 250px;
+    border-right: 1px solid #e0e0e0;
+}
+
+.home-container .sidebar .side-head {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-container .sidebar .side-head h2 {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.home-container .sidebar .side-head a {
+    display: block;
+    width: auto;
+    font-weight: 600;
+    margin: 0px;
+}
+
+.home-container .sidebar .note-list {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    overflow-y: auto;
+}
+
+.home-container .sidebar .note-list li {
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.home-container .sidebar .note-list li:hover {
+    background-color: #f0f0f0;
+}
+
+.home-container .sidebar .note-list li.active {
+    background-color: #e0e0e0;
+    font-weight: bold;
+}
+
+
+
+.home-container .sidebar .note-list li a img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.home-container .sidebar .no-notes {
+    padding: 20px;
+    text-align: center;
+    color: #666;
+    display: none;
+}
+
+.home-container .content {
+    flex: 1;
+}
+
+.home-container .content .content-head {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-container .content .content-head .note-title {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.home-container .content .content-head .note-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.home-container .content .content-head .note-actions .color-status {
+    height: 20px;
+    width: 40px;
+    border-radius: 5px;
+}
+
+.home-container .content .content-head .note-actions a {
+    margin: 0px;
+    text-align: center;
+}
+
+.home-container .content .content-head .note-actions a.delete {
+    background: #dc3545;
+}
+.home-container .content blockquote{
+    padding: 10px 20px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
 }

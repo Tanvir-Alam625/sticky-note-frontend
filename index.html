@@ -24,7 +24,62 @@
     <!-- end header html -->
 
     <!-- start main content html -->
-    <main class="main-content slide-in-up"></main>
+    <main class="main-content home-container slide-in-up">
+        <aside class="sidebar">
+            <div class="side-head">
+                <h2>Note List</h2>
+                <a href="./create.html" class="btn">Create</a>
+            </div>
+            <ul class="note-list" id="noteList">
+                <!-- Notes will be dynamically loaded here -->
+                <li>new test
+                    <a id="note-1" href="">
+                        <img class="delete-icon" src="./images/delete.svg" alt="delete-img">
+                    </a>
+                </li>
+                <li class="active">new test
+                    <a id="note-2" href="">
+                        <img class="delete-icon" src="./images/delete.svg" alt="delete-img">
+                    </a>
+                </li>
+            </ul>
+            <div class="error-message" id="errorMessage"></div>
+            <div class="success-message" id="successMessage"></div>
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Loading...</p>
+            </div>
+        </aside>
+        <div class="content">
+            <div class="content-head">
+                <h2 class="note-title" id="noteTitle">Note List</h2>
+                <div class="note-actions">
+                    <div class="color-status" id="colorStatus">
+
+                    </div>
+                    <a id="editNote" href="./create.html" class="btn">Edit</a>
+                    <a id="deleteNote" href="./create.html" class="btn delete">Delete</a>
+                </div>
+            </div>
+            <blockquote>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde repellat, ex repellendus delectus
+                accusamus at, commodi consequatur quos fugit minus, repudiandae recusandae tempora eum laudantium beatae
+                minima laborum quibusdam. Porro?
+                Ipsam possimus, expedita, quisquam voluptates nostrum temporibus modi accusantium enim ea, officia vitae
+                voluptatibus! Sit, vel dolores. Distinctio vero expedita cumque eius similique nesciunt placeat
+                laudantium consectetur, iusto commodi vel.
+                Totam molestiae quaerat ex fugit aperiam consequatur sequi deserunt doloremque esse, nemo in ratione?
+                Delectus rerum tenetur amet totam possimus, ducimus nulla! Quae, alias! Autem voluptas laudantium
+                dolorum ea tenetur!
+                Cumque iste ad voluptatibus consequuntur quo, amet et quidem illum voluptatem laborum placeat, assumenda
+                tempore, ipsam quibusdam. Autem quaerat tenetur voluptatem quis. Recusandae sunt dolore sit porro ipsa,
+                placeat exercitationem!
+                Dolore ex asperiores accusamus libero ducimus voluptatibus ipsa ut delectus minus. Iure consequuntur
+                iusto earum. Pariatur dolores assumenda non reprehenderit obcaecati qui et amet nisi eius inventore. A,
+                voluptatum dignissimos!
+            </blockquote>
+        </div>
+    </main>
     <!-- End main content html -->
 
     <script src="js/index.js"></script>
