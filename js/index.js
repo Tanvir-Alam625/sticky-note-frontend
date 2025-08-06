@@ -160,6 +160,10 @@ const Utils = {
         
         try {
             const response = await fetch(url, finalOptions);
+            if(response?.status === 403){
+                Utils.logout();
+                return;
+            }
             const data = await response.json();
             
             if (!response.ok) {
